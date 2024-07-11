@@ -9,4 +9,4 @@ sudo ln -s /etc/nginx/sites-available/tialia.service /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 echo "Echo check :8000/staticfiles/git.txt"
-python3 manage.py runserver
+python3 manage.py runserver 8000
