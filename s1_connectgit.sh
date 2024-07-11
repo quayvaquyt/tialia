@@ -4,4 +4,8 @@ ssh-keygen -t rsa -b 4096 -C "quayvaquyt@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa.pub
 cp ~/.ssh/id_rsa.pub /usr/www/tialia/static/git.txt
+cp nginx /etc/nginx/sites-available/tialia
+sudo ln -s /etc/nginx/sites-available/tialia /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
 python3 manage.py runserver
