@@ -38,16 +38,6 @@ echo  "Created NGINX Config for $DOMAIN"
 sudo ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
-cd /usr/www/$PROJECT_FOLDER_NAME
-if [ -d "venv" ]; then
-    echo "venv already exists"
-else
-    sudo python3 -m venv venv
-    echo "Created venv: venv"
-fi
-source venv/bin/activate
-sudo pip install gunicorn
-deactivate
 
 cd /etc/systemd/system/
 cat <<EOL > gunicorn-$PROJECT_FOLDER_NAME.service
