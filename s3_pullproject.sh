@@ -1,1 +1,1 @@
-input "Project Folder Name: " $pfn
+read -p "Project Folder Name: " PROJECT_FOLDER_NAME
