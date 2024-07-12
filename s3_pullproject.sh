@@ -6,11 +6,11 @@ read -p "Inter Port: " INTER_PORT
 cd /usr/www/
 git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
 if [ -d "$PROJECT_FOLDER_NAME/staticfiles" ]; then
-        echo "staticfiles folder already exists"
-    else
-        mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
-        echo "Created project directory: $PROJECT_FOLDER_NAME/staticfiles"
-    fi
+    echo "staticfiles folder already exists"
+else
+    mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
+    echo "Created project directory: $PROJECT_FOLDER_NAME/staticfiles"
+fi
 cd /etc/nginx/sites-available/
 cat <<EOL > $DOMAIN
 server {
@@ -39,7 +39,12 @@ sudo ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 cd /usr/www/$PROJECT_FOLDER_NAME
-python3 -m venv venv
+if [ -d "venv" ]; then
+    echo "venv already exists"
+else
+    python3 -m venv venv
+    echo "Created venv: venv"
+fi
 source venv/bin/activate
 pip install gunicorn
 deactivate
