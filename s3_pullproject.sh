@@ -6,6 +6,7 @@ read -p "Inter Port: " INTER_PORT
 cd /usr/www/
 git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
 if [ -d "$PROJECT_FOLDER_NAME/staticfiles" ]; then
+        echo "staticfiles folder already exists"
     else
         mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
         echo "Created project directory: $PROJECT_FOLDER_NAME/staticfiles"
