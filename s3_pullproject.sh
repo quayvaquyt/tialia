@@ -22,6 +22,10 @@ server {
     location /static/ {
         alias /usr/www/$PROJECT_FOLDER_NAME/static/;
     }
+
+    location /staticfiles/ {
+        alias /usr/www/$PROJECT_FOLDER_NAME/staticfiles/;
+    }
 }
 EOL
 echo  "Created NGINX Config for $DOMAIN"
