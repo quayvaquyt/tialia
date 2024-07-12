@@ -8,7 +8,7 @@ git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
 if [ -d "$PROJECT_FOLDER_NAME/staticfiles" ]; then
     echo "staticfiles folder already exists"
 else
-    mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
+    sudo mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
     echo "Created project directory: $PROJECT_FOLDER_NAME/staticfiles"
 fi
 cd /etc/nginx/sites-available/
@@ -42,11 +42,11 @@ cd /usr/www/$PROJECT_FOLDER_NAME
 if [ -d "venv" ]; then
     echo "venv already exists"
 else
-    python3 -m venv venv
+    sudo python3 -m venv venv
     echo "Created venv: venv"
 fi
 source venv/bin/activate
-pip install gunicorn
+sudo pip install gunicorn
 deactivate
 
 cd /etc/systemctl/system/
