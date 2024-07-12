@@ -1,1 +1,1 @@
-systemctl list-units --type=service --state=running
+ssh -T git@github.com
