@@ -5,6 +5,11 @@ read -p "Local Port: " LOCAL_PORT
 read -p "Inter Port: " INTER_PORT
 cd /usr/www/
 git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
+if [ -d "$PROJECT_FOLDER_NAME/staticfiles" ]; then
+    else
+        mkdir -p "$PROJECT_FOLDER_NAME/staticfiles"
+        echo "Created project directory: $PROJECT_FOLDER_NAME/staticfiles"
+    fi
 cd /etc/nginx/sites-available/
 cat <<EOL > $DOMAIN
 server {
