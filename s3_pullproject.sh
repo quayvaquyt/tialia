@@ -49,7 +49,7 @@ source venv/bin/activate
 sudo pip install gunicorn
 deactivate
 
-cd /etc/systemctl/system/
+cd /etc/systemd/system/
 cat <<EOL > gunicorn-$PROJECT_FOLDER_NAME.service
 [Unit]
 Description=gunicorn $PROJECT_FOLDER_NAME
