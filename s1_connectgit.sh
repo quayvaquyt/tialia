@@ -8,5 +8,5 @@ cp nginx /etc/nginx/sites-available/tialia.service
 sudo ln -s /etc/nginx/sites-available/tialia.service /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
-echo "Echo check :8000/static/git.txt"
+echo "Echo check /static/git.txt"
 python3 manage.py runserver 8000
