@@ -6,9 +6,13 @@ read -p "Inter Port: " INTER_PORT
 cd /usr/www/
 if [ -d "$PROJECT_FOLDER_NAME" ]; then
     echo "PROJECT folder already exists"
-    exit 1
+    read -p "Exit? y|n: " EXIT
+    if [ "$EXIT" = "y" ]; then
+        exit 1
+    fi
+else
+    git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
 fi
-git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
 if [ -d "$PROJECT_FOLDER_NAME/venv" ]; then
     echo "venv folder already exists"
 else
