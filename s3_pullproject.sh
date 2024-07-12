@@ -36,3 +36,8 @@ server {
 EOL
 echo  "Created NGINX Config for $DOMAIN"
 sudo ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+cd /usr/www/$PROJECT_FOLDER_NAME
+echo  "Check :$INTER_PORT"
+python3 manage.py runserver $LOCAL_PORT
