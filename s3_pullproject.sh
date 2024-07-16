@@ -13,24 +13,24 @@ if [ -d "$PROJECT_FOLDER_NAME" ]; then
 else
     git clone git@github.com:$GIT_ACC/$PROJECT_FOLDER_NAME.git
 fi
-if [ -d "$PROJECT_FOLDER_NAME/venv" ]; then
-    echo "venv folder already exists"
-else
-    echo "venv not found"
-    exit 1
-fi
-if [ -f "$PROJECT_FOLDER_NAME/venv/bin/gunicorn" ]; then
-    echo "gunicorn already exists"
-else
-    echo "gunicorn not found"
-    exit 1
-fi
-if [ -f "$PROJECT_FOLDER_NAME/venv/bin/django-admin" ]; then
-    echo "django-admin already exists"
-else
-    echo "django-admin not found"
-    exit 1
-fi
+#if [ -d "$PROJECT_FOLDER_NAME/venv" ]; then
+#    echo "venv folder already exists"
+#else
+#    echo "venv not found"
+#    exit 1
+#fi
+#if [ -f "$PROJECT_FOLDER_NAME/venv/bin/gunicorn" ]; then
+#    echo "gunicorn already exists"
+#else
+#    echo "gunicorn not found"
+#    exit 1
+#fi
+#if [ -f "$PROJECT_FOLDER_NAME/venv/bin/django-admin" ]; then
+#    echo "django-admin already exists"
+#else
+#    echo "django-admin not found"
+#    exit 1
+#fi
 if [ -d "$PROJECT_FOLDER_NAME/staticfiles" ]; then
     echo "staticfiles folder already exists"
 else
