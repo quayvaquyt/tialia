@@ -76,7 +76,7 @@ After=network.target
 User=www-data
 Group=www-data
 WorkingDirectory=/usr/www/$PROJECT_FOLDER_NAME
-ExecStart=/usr/www/$PROJECT_FOLDER_NAME/venv/bin/gunicorn --access-logfile /usr/www/$PROJECT_FOLDER_NAME/static/access.log --error-logfile /usr/www/$PROJECT_FOLDER_NAME/static/error.log --workers 50 --bind 127.0.0.1:$LOCAL_PORT $PROJECT_FOLDER_NAME.wsgi:application
+ExecStart=/usr/www/$PROJECT_FOLDER_NAME/venv/bin/gunicorn --access-logfile /usr/www/$PROJECT_FOLDER_NAME/static/access.log --error-logfile /usr/www/$PROJECT_FOLDER_NAME/static/error.log --workers 50 --bind 0.0.0.0:$LOCAL_PORT $PROJECT_FOLDER_NAME.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
