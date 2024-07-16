@@ -11,7 +11,7 @@ if [ -d "$PROJECT_FOLDER_NAME" ]; then
         exit 1
     fi
 else
-    git clone https://github.com/$GIT_ACC/$PROJECT_FOLDER_NAME.git
+    git clone git@github.com:$GIT_ACC/$PROJECT_FOLDER_NAME.git
 fi
 if [ -d "$PROJECT_FOLDER_NAME/venv" ]; then
     echo "venv folder already exists"
